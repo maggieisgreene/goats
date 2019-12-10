@@ -15,7 +15,7 @@ class GoatCorral extends React.Component {
     const goatCards = myGoats.map((goat) => <Goat key={goat.id} goat={goat} />);
 
     return (
-      <div className="goatCorral">
+      <div className="goatCorral d-flex flex-wrap">
         {goatCards}
       </div>
     );
