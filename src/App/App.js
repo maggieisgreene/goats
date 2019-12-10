@@ -1,28 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className="btn btn-light">HEY</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import goatData from '../helpers/data/goatData';
+
+import GoatCorral from '../components/GoatCorral/GoatCorral';
+
+class App extends React.Component {
+  state = {
+    goats: [],
+  }
+
+  componentDidMount() {
+    const goats = goatData.getGoats();
+    this.setState({ goats });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <button className="btn btn-danger">Bootstrap Button</button>
+        <GoatCorral goats={this.state.goats} />
+      </div>
+    );
+  }
 }
 
 export default App;
