@@ -13,8 +13,7 @@ class GoatCorral extends React.Component {
 
   render() {
     const myGoats = this.props.goats;
-    const { freeGoat } = this.props;
-    const { useGoat } = this.props;
+    const { freeGoat, useGoat } = this.props;
 
     const goatCards = myGoats.map((goat) => <Goat key={goat.id} goat={goat} freeGoat={freeGoat} useGoat={useGoat} />);
 
